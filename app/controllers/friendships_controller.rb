@@ -15,17 +15,23 @@ class FriendshipsController < ApplicationController
       flash[:notice] = 'Sorry! there is already a friend request pending with this user!'
     end
 
-    redirect_to users_path
+    redirect_to request.referer
   end
 
   def update
     @friend_request = Friendship.find_by(user_id: params[:id], friend_id: current_user.id)
     @friend_request.confirmed! if @friend_request.pending?
-    redirect_to users_path
+    redirect_to request.referer
+  rescue StandardError
+    flash[:alert] = 'Something Went Wrong!'
+    redirect_to request.referer
   end
 
   def destroy
-    redirect_to users_path if @friendship.destroy
+    redirect_to request.referer if @friendship.destroy
+  rescue StandardError
+    flash[:alert] = 'Something Went Wrong!'
+    redirect_to request.referer
   end
 
   private
