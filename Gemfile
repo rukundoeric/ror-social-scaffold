@@ -7,8 +7,8 @@ ruby '2.7.0'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record
 group :development, :test do
-  gem 'sqlite3', '~> 1.4'
   gem 'database_cleaner'
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :production do
@@ -53,8 +53,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec'
   gem 'capybara', '>= 2.15'
+  gem 'rspec'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'shoulda', '~> 3.5'
