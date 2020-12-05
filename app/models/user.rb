@@ -16,7 +16,6 @@ class User < ApplicationRecord
 
   has_many :friend_requests_sent, -> { where(status: 'pending') },
            class_name: 'Friendship', foreign_key: 'user_id'
-  has_many :pending_friends, through: :friend_requests_sent, source: :user
   has_many :friend_requests_received, -> { where(status: 'pending') },
            class_name: 'Friendship', foreign_key: 'friend_id'
   has_many :friend_requests, through: :friend_requests_received, source: :user
