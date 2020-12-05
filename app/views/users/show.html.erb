@@ -6,8 +6,8 @@
     <div>
       <h4>Friendships Requests:</h4>
       <ul>
-       <% @user.friend_requests_received.each do |u| %>
-         <li><%= u.friend.name %></li>
+       <% @user.friend_requests.each do |u| %>
+         <li><%= u.name %><%= friendship_button(u) %></li>
        <% end %>
       </ul>
     </div>

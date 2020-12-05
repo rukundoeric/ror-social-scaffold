@@ -18,6 +18,8 @@ class User < ApplicationRecord
            class_name: 'Friendship', foreign_key: 'user_id'
   has_many :friend_requests_received, -> { where(status: 'pending') },
            class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :friend_requests, through: :friend_requests_received, source: :user
+
   def friend?(user)
     friendship = Friendship.find_by(user_id: user.id, friend_id: id, status: 'confirmed') ||
                  Friendship.find_by(user_id: id, friend_id: user.id, status: 'confirmed')
