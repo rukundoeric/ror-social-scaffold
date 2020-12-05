@@ -9,7 +9,7 @@
 
 ## Live Demo
 
-TBA
+[Live Demo Here](https://stay-in-touch-2020.herokuapp.com/)
 
 
 ## Getting Started
@@ -67,11 +67,15 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+The Appp is Hosted On Heroku
 
 ## Authors
 
-TBA
+👤 **Rukundo Eric**
+
+- GitHub: [@githubhandle](https://github.com/rukundoeric)
+- Twitter: [@twitterhandle](https://twitter.com/rukundoeric005)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/rukundo-eric-000bba181/)
 
 ## 🤝 Contributing
 
@@ -85,9 +89,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- My thanks also goes to Microverse and all our peers and colleagues there.
 
 ## 📝 License
 
-TBA
-
+This project is [MIT](./LICENSE) licensed.
