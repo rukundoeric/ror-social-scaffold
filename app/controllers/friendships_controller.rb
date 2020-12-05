@@ -1,6 +1,6 @@
 class FriendshipsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_friendship
+  before_action :set_friendship, only: %i[create destroy]
 
   def create
     if @friendship.nil?
@@ -21,6 +21,7 @@ class FriendshipsController < ApplicationController
   def update
     @friend_request = Friendship.find_by(user_id: params[:id], friend_id: current_user.id)
     @friend_request.confirmed! if @friend_request.pending?
+    @friend_request.confirm_friend
     redirect_to request.referer
   rescue StandardError
     flash[:alert] = 'Something Went Wrong!'
